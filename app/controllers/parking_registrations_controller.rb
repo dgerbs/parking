@@ -1,2 +1,3 @@
 class ParkingRegistrationsController < ApplicationController
+
 end

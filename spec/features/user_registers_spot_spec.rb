@@ -15,14 +15,14 @@ feature "user registers spot", %Q{
 	scenario 'specifies valid information, registers spot' do
 		slot_count = ParkingRegistration.count
 		visit '/'
-		fill_in "First name", with: 'John'
-		fill_in "Last name", with: 'Doe'
-		fill_in "Email", with: 'john@example.com'
-		fill_in "Spot number", with: 5
-		click_button "Register"
+		fill_in 'First name', with: 'John'
+		fill_in 'Last name', with: 'Doe'
+		fill_in 'Email', with: 'john@example.com'
+		fill_in 'Spot number', with: 5
+		click_button 'Register'
 		expect(page).to have_content('You registered successfully.')
 		expect(ParkingRegistration.count).to eql(slot_count + 1)
 	end
 
-	
+
 end

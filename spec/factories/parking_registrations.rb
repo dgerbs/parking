@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :parking_registration do
-    first_name "MyString"
-    last_name "MyString"
-    email "MyString"
-    spot_number 1
+    first_name "John"
+    last_name "Doe"
+    email "john@example.com"
+    spot_number 5
     parked_on "2013-09-21"
   end
 end
