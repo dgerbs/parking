@@ -49,7 +49,20 @@ describe ParkingRegistration do
 			expect(reg.neighbors).to eql([nil, high_neighbor])
 		end
 		it 'has no neighbors if there is no registrations near me' do
-
+			FactoryGirl.create(:parking_registration,
+				spot_number: 20)
+			reg = FactoryGirl.build(:parking_registration,
+				spot_number: 6)
+			expect(reg.neighbors).to eql([nil, nil])
+		end
+		it 'sorts neighbors properly' do
+			high_neighbor = FactoryGirl.create(:parking_registration,
+				spot_number: 7)
+			low_neighbor = FactoryGirl.create(:parking_registration,
+				spot_number: 5)
+			reg = FactoryGirl.build(:parking_registration,
+				spot_number: 6)
+			expect(reg.neighbors).to eql([low_neighbor, high_neighbor])
 		end
 	end
 end
