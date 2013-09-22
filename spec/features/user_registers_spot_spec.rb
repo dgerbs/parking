@@ -12,6 +12,10 @@ feature "user registers spot", %Q{
 	# * I must enter a valid parking spot number (the lot has spots identified as numbers 1-60)
 	# * I must enter a valid email
 	
+# As a parker
+# I want to see my two neighbors
+# So that I can get to know them better
+
 	scenario 'specifies valid information, registers spot' do
 		slot_count = ParkingRegistration.count
 		visit '/'
