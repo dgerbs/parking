@@ -28,12 +28,5 @@ end
 scenario 'a neighbor with a spot one more than me'
 scenario 'a neighbor that is not spot in immediate proximity'
 
-	def create_registration_for(spot_number)
-		visit '/'
-		fill_in 'First name', with: 'John'
-		fill_in 'Last name', with: 'Doe'
-		fill_in 'Email', with: 'john@example.com'
-		fill_in 'Spot number', with: spot_number
-		click_button 'Register'
-	end
+include ParkingRegistrationTestHelpers
 end
