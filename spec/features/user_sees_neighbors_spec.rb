@@ -18,7 +18,7 @@ scenario 'no neighbors present' do
 	expect(page).to have_content('You have no neighbors.')
 end
 scenario 'a neighbor with a spot one less than me' do
-	neighbor_first_name = 'Sam'
+	neighbor_first_name = 'John'
 	FactoryGirl.create(:parking_registration,
 		first_name: neighbor_first_name,
 		spot_number: 4)

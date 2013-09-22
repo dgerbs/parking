@@ -18,6 +18,10 @@ class ParkingRegistration < ActiveRecord::Base
 		save
 	end	
 
+	def has_neighbors?
+		neighbors != [nil, nil]
+	end
+
 	def neighbors
 		neighbors = ParkingRegistration.where(
 			"(spot_number = :below OR spot_number = :above)

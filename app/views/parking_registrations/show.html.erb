@@ -1,6 +1,15 @@
 <h1> Parking Registration </h1>
 
-<p>'You have no neighbors.'</p>
+<% if @parking_registration.has_neighbors? %>
+	<% @parking_registration.neighbors.each do |neighbors| %>
+		<% if neighbor.present.nil? %>
+			<p><%= neighbor.first_name %></p>
+		<% end %>
+	<% end %>
+<% else %>
+	<p>'You have no neighbors.'</p>
+<% end %>
+
 <dl>
 	<dt>Name</dt>
 	<dd><%= @parking_registration.first_name %> <%= @parking_registration.last_name %></dd>
