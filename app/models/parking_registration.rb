@@ -17,4 +17,17 @@ class ParkingRegistration < ActiveRecord::Base
 		self.parked_on = Date.today
 		save
 	end	
+
+	def neighbors
+		[
+			ParkingRegistration.where({
+				spot_number: self.spot_number - 1,
+				parked_on: self.parked_on
+			}).first,
+			ParkingRegistration.where({
+				spot_number: self.spot_number + 1,
+				parked_on: self.parked_on
+			}).first
+		]
+	end
 end
