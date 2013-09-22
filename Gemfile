@@ -39,6 +39,7 @@ group :development, :test do
 	gem 'shoulda'
 	gem 'launchy'
 	gem 'capybara'
+	gem 'pry-rails'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
